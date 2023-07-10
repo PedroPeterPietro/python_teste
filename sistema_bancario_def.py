@@ -25,6 +25,7 @@ def main():
         else:
               print("Opção incorreta, por favor selecione novamente.\n")
 
+
 def menu_usuario():
     menu = ""
     usuario_existente = informar_registro()
@@ -54,6 +55,7 @@ def menu_usuario():
     else:
         print("Usuario inexistente, por favor informar o CPF novamente ou fazer o Cadastro na opção 2 - Cadastrar Novo Usuario\n")
 
+
 def sacar(usuario):
 
         valor = float(input("Informe o valor do saque: \n"))
@@ -77,6 +79,7 @@ def depositar(usuario):
                     print(f"Depósito Concluido!, o seu saldo atual é igual a R$ {usuario['Saldo']:.2f}")
         else:
                     print("Prezado cliente, o valor digitado não é válido.")
+
 
 def verificar_extrato(usuario):
 
@@ -138,9 +141,11 @@ def admin_config():
         else:
               print("Senha Incorreta \n")
 
+
 def retornar_apenas_numeros(string):
       string = re.sub(r'\D', '', string)
       return string
+
 
 def verificar_registro_existente(registro):
     global banco_de_dados
@@ -151,6 +156,7 @@ def verificar_registro_existente(registro):
 
     return False
 
+
 def informar_registro():
     registro_usuario = input("Prezado cliente, primeiro informe o seu CPF para continuarmos a ação \n")
     registro_usuario = retornar_apenas_numeros(registro_usuario)
@@ -159,7 +165,6 @@ def informar_registro():
             return usuario
 
     return None
-
 
 
 main()
